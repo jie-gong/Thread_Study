@@ -52,7 +52,7 @@ public class TestLambda01 {
             }
         };
         like.Lambda();
-        
+
 
         /**
          * 6.用lambda简化
