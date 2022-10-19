@@ -11,12 +11,21 @@ import java.util.List;
  * @Description:
  */
 public class UnsafeList {
-    public static void main(String[] args) throws InterruptedException {
-        List<String> strings = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
-            new Thread(() -> strings.add(Thread.currentThread().getName())).start();
+    public static void main(String[] args) {
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 100000; i++) {
+            new Thread(() -> {
+                synchronized (list) {
+                    list.add(Thread.currentThread().getName());
+                }
+            }).start();
         }
-        Thread.sleep(10);
-        System.out.println(strings.size());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(list.size());
     }
 }

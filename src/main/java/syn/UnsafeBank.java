@@ -9,12 +9,10 @@ package syn;
  */
 public class UnsafeBank {
     public static void main(String[] args) {
-        Account account = new Account(200, "银行存款");
+        Account account = new Account(100, "银行存款");
         Drawing woff = new Drawing(account, 100, "老婆");
         Drawing me = new Drawing(account, 50, "我");
-        me.setPriority(Thread.MIN_PRIORITY);
         me.start();
-        woff.setPriority(Thread.MAX_PRIORITY);
         woff.start();
     }
 }

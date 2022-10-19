@@ -10,19 +10,20 @@ package syn;
 //不安全的买票
 
 
-    //线程不安全  有负数
+//线程不安全  有负数
 public class UnsafeBuyTicket {
     public static void main(String[] args) {
         BuyTicket buyTicket = new BuyTicket();
-        new Thread(buyTicket,"小王").start();
-        new Thread(buyTicket,"小孙").start();
-        new Thread(buyTicket,"小黄").start();
+        new Thread(buyTicket, "小王").start();
+        new Thread(buyTicket, "小孙").start();
+        new Thread(buyTicket, "小黄").start();
     }
 }
 
 class BuyTicket implements Runnable {
 
-    int TicketNumber = 3;
+    int TicketNumber = 10;
+
     boolean flag = true;//外部停止线程方式
 
     @Override
@@ -30,16 +31,21 @@ class BuyTicket implements Runnable {
 
         //买票
         while (flag) {
+
             by();
+
         }
 
     }
 
     //同步方法synchronized ，锁的是this
     private synchronized void by() {
+
         //判断是否有票
         if (TicketNumber <= 0) {
+
             stop();
+
             return;
         }
         //模拟延迟
