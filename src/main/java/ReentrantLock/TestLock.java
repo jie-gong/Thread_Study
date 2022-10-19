@@ -1,4 +1,4 @@
-package Gaoji;
+package ReentrantLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
