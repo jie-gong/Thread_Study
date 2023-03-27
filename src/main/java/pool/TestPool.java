@@ -17,7 +17,7 @@ public class TestPool {
     public static void main(String[] args) {
         //1.创建服务，创建线程池
         //newFixedThreadPool参数为：线程池的大小
-        ExecutorService service= Executors.newFixedThreadPool(10);
+        ExecutorService service = Executors.newFixedThreadPool(10);
         service.execute(new MyThread());
         service.execute(new MyThread());
         service.execute(new MyThread());

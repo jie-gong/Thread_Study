@@ -12,7 +12,7 @@ package join;
 public class TestJoin implements Runnable {
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 200; i++) {
             System.out.println("鸡汤来喽"+i);
         }
     }
@@ -23,7 +23,7 @@ public class TestJoin implements Runnable {
         Thread thread = new Thread(testJoin);
 
 
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 1000; i++) {
             if (i==200){
                 thread.start();
                 thread.join();//插队

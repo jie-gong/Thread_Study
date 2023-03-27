@@ -15,7 +15,7 @@ public class SheepTest implements Runnable {
     @Override
     public void run() {
         while (true) {
-            if (tickerNums <= 0) {
+            if (tickerNums < 0) {
                 break;
             }
             try {

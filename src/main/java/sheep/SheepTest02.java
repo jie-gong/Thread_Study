@@ -26,13 +26,29 @@ public class SheepTest02 {
     }
 
     public static void main(String[] args) throws InterruptedException {
-//            teaDown();
-        //打印当前系统时间
+        teaDown();
+//        打印当前系统时间
         Date startTime = new Date(System.currentTimeMillis());//获取系统当前时间
         while (true) {
             System.out.println(new SimpleDateFormat("HH:mm:ss").format(startTime));
             startTime = new Date(System.currentTimeMillis());//更新系统当前时间
             Thread.sleep(1000);
         }
+
+//        int number = 3;
+//        while (true) {
+//            String num = String.valueOf(number);
+////            text.setText(num + "跳过");
+//            System.out.println(num);
+//            number--;
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            if (number==0){
+//                break;
+//            }
+//        }
     }
-}
+    }
